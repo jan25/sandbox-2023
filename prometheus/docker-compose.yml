@@ -1,0 +1,12 @@
+version: "3.9"
+services:
+  promapp:
+    build: ./app
+    ports:
+      - "8080:8090"
+  prometheus:
+    image: prom/prometheus
+    ports:
+      - "9080:9090"
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
